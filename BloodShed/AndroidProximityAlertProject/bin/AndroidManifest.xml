@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.sumit.testclient"
+    android:versionCode="1"
+    android:versionName="1.0" >
+    
+    
+      <uses-sdk
+        android:minSdkVersion="12"
+        android:targetSdkVersion="18" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <permission android:name="test.app.syn.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+    <uses-permission android:name="test.app.syn.permission.C2D_MESSAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <application
+        android:icon="@drawable/icon"
+        android:label="@string/app_name" >
+        
+        <service
+  android:name="com.sumit.testclient.Acc_service"
+  android:icon="@drawable/icon"
+  android:label="@string/service_name"
+  >
+</service> 
+        <receiver
+            android:name="com.sumit.testclient.GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <category android:name="test.app.syn" />
+            </intent-filter>
+        </receiver>
+        <service android:name="com.sumit.testclient.GcmIntentService" />
+        <activity
+            android:name="com.sumit.testclient.ProxAlertActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.PROX" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.sumit.testclient.LbsGeocodingActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.GPS1" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.sumit.testclient.Mainapp1Activity"
+            android:label="@string/title_activity_mainapp1" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.sumit.testclient.AndroidHttpPostActivity"
+            android:label="@string/title_activity_android_http_post" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="test.app.syn.Mainapp1Activity" />
+        </activity>
+        <activity
+            android:name="com.sumit.testclient.asynchttp"
+            android:label="asynch_a" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="test.app.syn.Mainapp1Activity" />
+        </activity>
+        <activity
+            android:name="com.sumit.testclient.TestActivity"
+            android:label="@string/app_name" >
+           <intent-filter>
+                <action android:name="android.intent.action.MAP" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+          <!-- Goolge API Key -->
+         <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyDFDZShXqjWKXA-5oUhf-mG5V0Zo3CHrSY" />
+    </application>
+
+    
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+  
+       
+
+</manifest>
