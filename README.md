@@ -1,3 +1,8 @@
 Tech-Rangers
 ============
-The essence of technology is in the hands of Mobile. :)
+Tech Ranger implemented App for physical disabled people. It is community based app. A group of people need to register to a server and their GPS locations are sent back to server at regular interval of time. 
+A user of this app has to install an Android app in his phone, user need to register with some unique id and user can send message to server ( Message can be an update location message which runs in background by background services) and server can maintain the latest location of user.
+If a user has some kind of health problem, he can simple shake his phone and with the help of accelorometer and gravity sensors, the background service will launch and activity allow user to speak some text regarding his problem and this message is sent to server.Server will reply the user with the locations of people in that community and mark them in google map. User can check the locations and call them manually about the problem. However server  will check over other devices registered and find the nearest person according to its GPS location. Server will pass this message to the nearest person and nearest person can help the person.
+Hence it will provide the physical disable person a tool to communicate the members automatically just by shaking phone and speak up the message. It also provides location of the people in that group so disable person can call it manually.
+
+We used Google map API and text-to-speech API will be mostly helpful for physically disable people. We also used Google App Engine to host the server, However it creates some problem with database hence we manage it hosting our server locally.
