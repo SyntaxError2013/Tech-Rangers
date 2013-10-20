@@ -24,5 +24,15 @@
         android:layout_height="wrap_content"
         android:layout_gravity="top"
         android:text="Post" />
+     <Button
+        android:id="@+id/asynch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="send" />
+     <Button
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="map" />        
 	
 </LinearLayout>

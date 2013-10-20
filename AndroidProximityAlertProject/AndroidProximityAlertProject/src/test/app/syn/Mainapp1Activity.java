@@ -13,6 +13,8 @@ public class Mainapp1Activity extends Activity implements OnClickListener {
 	Button btngps;
 	Button btnproximity;
 	Button btnpost;
+	Button btnasynch;
+	Button btnmap;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +26,10 @@ public class Mainapp1Activity extends Activity implements OnClickListener {
 	    btnproximity.setOnClickListener(this);
 	    btnpost = (Button) findViewById(R.id.post);
 	    btnpost.setOnClickListener(this);
+	    btnasynch = (Button) findViewById(R.id.asynch);
+	    btnasynch.setOnClickListener(this);
+	    btnmap = (Button) findViewById(R.id.map);
+	    btnmap.setOnClickListener(this);
 	    
 		
 	}
@@ -50,6 +56,14 @@ public class Mainapp1Activity extends Activity implements OnClickListener {
 	    case R.id.post:
 	    	Intent ipo = new Intent(getBaseContext(), AndroidHttpPostActivity.class);
 	    	startActivity(ipo);
+	      break;
+	    case R.id.asynch:
+	    	Intent apo = new Intent(getBaseContext(), asynchttp.class);
+	    	startActivity(apo);
+	      break;
+	    case R.id.map:
+	    	Intent mpo = new Intent(getBaseContext(), TestActivity.class);
+	    	startActivity(mpo);
 	      break;
 	    default:
 	      break;
